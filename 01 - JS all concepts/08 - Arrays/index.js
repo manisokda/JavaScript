@@ -245,8 +245,77 @@ console.log(reverse([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, 7)); // output is 8,7,6,
 
 
 
+
 // ----------------------------------------------------------------------------------------------------------------------------
 
+
+//  Count the numbers 
+/*Given an array A of N integers. 
+Count the number of elements that have at least 1 elements greater than itself.*/
+
+function countNumbers(A) {
+    let N = A.length;
+    let count = 0;
+    let max_value = A[0];
+
+    // Find the maximum value in the array
+    for (let i = 1; i < N; i++) {
+        if (A[i] > max_value) {
+            max_value = A[i];
+        }
+    }
+
+    // Count the elements that have at least one element greater than itself
+    for (let i = 0; i < N; i++) {
+        if (A[i] < max_value) {
+            count++;
+        }
+    }
+
+    return count;
+}
+console.log(countNumbers([3, 2, 0])); // output is 2
+
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+//Check if Array is Sorted or not
+function arraySorted(A) {
+    let N = A.length;
+    let isSorted = A[0];
+    for (let i = 1; i < N; i++) {
+        if (A[i] < isSorted) {
+            return 0;
+        }
+        isSorted = A[i];
+    }
+    return 1;
+
+}
+console.log(arraySorted([1, 2, 2])); // output is - 1
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+//Right Shift an Array
+function shiftArray(A) {
+    let N = A.length;
+    let lastDightStore = A[N - 1];
+    for (i = N - 1; i >= 1; i--) {
+        A[i] = A[i - 1];
+    }
+    A[0] = lastDightStore;
+    return A
+}
+console.log(shiftArray([1, 2, 3, 4, 5])) // [5,1,2,3,4]
 
 
 

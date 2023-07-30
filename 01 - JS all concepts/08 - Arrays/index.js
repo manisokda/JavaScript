@@ -321,3 +321,114 @@ console.log(shiftArray([1, 2, 3, 4, 5])) // [5,1,2,3,4]
 
 
 // ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Even Odd Elements
+function oddEvenNumber(A) {
+    let N = A.length;
+    let odd_count = 0;
+    let even_count = 0;
+    let total = '';
+    for (let i = 0; i < N; i++) {
+        if (A[i] % 2 == 0) {
+            even_count++;
+        } else {
+            odd_count++;
+        }
+    }
+    total = even_count - odd_count;
+    if (total < 0) {
+        total = total * -1;
+    }
+    return total;
+
+}
+console.log(oddEvenNumber([1, 2, 3, 4, 5])); // odd count =3, even count = 2 so talal 3-2=1
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Temperature Difference
+function temperatureDifference(arr) {
+    let N = arr.length;
+    let max = -Infinity;
+    let result = '';
+    let min = Infinity;
+    for (let i = 0; i < N; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    result = max - min;
+    return result
+}
+console.log(temperatureDifference([12, 26, 25, 21, 18, 10, 45, 40, 29, 30], 10)); // output - 35
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Average Rainfall
+function averageRainfall(arr, A) {
+    let N = arr.length;
+    let sum = 0;
+    let total = '';
+    for (let i = 0; i < N; i++) {
+        sum += arr[i];
+    }
+    total = sum / A;
+    total = Math.floor(total);
+    return total
+}
+console.log(averageRainfall([1, 2, 3, 4], 4)); // output - 2
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Position Of Element B
+function positionFind(arr, B) {
+    let N = arr.length;
+    for (let i = 0; i < N; i++) {
+        if (arr[i] == B) {
+            return i;
+        }
+    }
+    return -1;
+}
+console.log(positionFind([12, 26, 25, 21, 18, 10, 45, 40, 29, 30], 40)); //output - index position is 7
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Count Of Elements Greater Than B
+function countGreatherthanB(arr, B) {
+    let N = arr.length;
+    let sum = 0;
+    for (let i = 0; i < N; i++) {
+        if (arr[i] > B) {
+            sum++
+        }
+    }
+    return sum;
+}
+console.log(countGreatherthanB([12, 26, 25, 21, 18, 10, 45, 40, 29, 30], 25)); // 5
+console.log(countGreatherthanB([22, 28, 23, 21, 18, 15, 24, 40, 12, 30, 10, 19], 20)); // 7
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------

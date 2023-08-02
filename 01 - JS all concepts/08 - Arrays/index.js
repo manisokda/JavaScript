@@ -432,3 +432,187 @@ console.log(countGreatherthanB([22, 28, 23, 21, 18, 15, 24, 40, 12, 30, 10, 19],
 
 
 // ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// First and Last Index
+function firstAndLastIndex(arr, B) {
+    let N = arr.length;
+    let result = [];
+    let count = [];
+    let lastIndex = '';
+    for (let i = 0; i < N; i++) {
+        if (arr[i] == B) {
+            count += i;
+        }
+    }
+    lastIndex = count.length - 1;
+    result.push(count[0]);
+    result.push(count[count.length - 1]);
+    return result;
+}
+console.log(firstAndLastIndex([-2, -2, 4, 4, 8, 9], 4));
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+// Consecutive Duplicate
+function consecutiveDuplicate(arr) {
+    let N = arr.length;
+    for (let i = 0; i < N; i++) {
+        if (arr[i] == arr[i - 1]) {
+            return "True";
+        }
+    }
+    return "False";
+}
+console.log(consecutiveDuplicate([1, 2, 3, 4]));
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Separate Odd Even
+function seperateOddEven(arr) {
+    let N = arr.length;
+    let odd_num = [];
+    let even_num = [];
+    for (let j = 0; j < N; j++) {
+        if (arr[j] % 2 == 0) {
+            even_num.push(arr[j])
+        } else {
+            odd_num.push(arr[j])
+        }
+    }
+    if (odd_num.length > 0) {
+        console.log(odd_num.join(' ') + ' ');
+    } else {
+        console.log('');
+    }
+    if (even_num.length > 0) {
+        console.log(even_num.join(' ') + ' ');
+    } else {
+        console.log('');
+    }
+}
+console.log(seperateOddEven([1, 2, 3, 4, 5, 6]))
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// // Check If Array Is Strictly Decreasing?
+function strictlyDecreasingOrder(A) {
+    let N = A.length;
+    for (let i = 0; i < N; i++) {
+        if (A[i] <= A[i + 1])
+            return 0;
+    }
+    return 1;
+}
+console.log(strictlyDecreasingOrder([6, 5, 4, 3, 2, 1])) // output - its decreasing order so print it as 1.
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// pair sum and compare with K
+function pairEqual(arr, K) {
+    let N = arr.length;
+    let count = 0;
+    for (let i = 0; i < N; i++) {
+        for (j = 0; j < N; j++) {
+            if (arr[i] + arr[j] == K) {
+                count++;
+            }
+        }
+    }
+    return count / 2;
+}
+console.log(pairEqual([5, 3, 2, 3, 6], 8))
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+//  Inverse of the Array
+
+/*You are given an integer array A. Now your task is to find the inverse of A. Now, the inverse of the array is A will be an array in which we change the positions of the values as their indices and indices as values.
+
+So, array A = [2, 0, 1]
+- Now 2 is at index 0. So, place 0 at index 2.
+- 0 is at index 1. So, place 1 at index 0.
+- 1 is at index 2. So, place 2 at index 1.
+
+So, the inverse of A will be [1, 2, 0]*/
+
+function invesrArray(arr) {
+    let N = arr.length;
+    let count = [];
+    for (let i = 0; i < N; i++) {
+        count[arr[i]] = i;
+    }
+    return count
+}
+console.log(invesrArray([2, 0, 1])) // [1, 2, 0]
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Left Shift An Array
+function leftShift(arr) {
+    let N = arr.length;
+    let firstDight = arr[0];
+    // console.log(temp);
+    for (let i = 0; i < N - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    arr[N - 1] = firstDight;
+    return arr;
+}
+console.log(leftShift([1, 2, 3, 4, 5])); // [2,3,4,5,1]
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Find unique element
+function findUniqueElement(arr) {
+    let ans = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let count = 0;
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] === arr[i]) {
+                count++;
+            }
+        }
+        ans = arr[i]
+
+        if (count === 1) {
+            ans = arr[i] + '';
+            break;
+        }
+    }
+    return ans;
+}
+
+console.log(findUniqueElement([1, 4, 3, 5, 2, 3, 5, 1, 4, 4])); // unique number is 2
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------

@@ -616,3 +616,89 @@ console.log(findUniqueElement([1, 4, 3, 5, 2, 3, 5, 1, 4, 4])); // unique number
 
 
 // ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// All Even Numbers
+function AllEvenNumbers(arr) {
+    let N = arr.length;
+    let evenNum = [];
+    for (let i = 0; i < N; i++) {
+        if (arr[i] % 2 == 0) {
+            evenNum.push(arr[i]);
+        }
+    }
+    // evenNum;
+    return evenNum;
+}
+console.log(AllEvenNumbers([8, 54, 79, 62, 33, 59, 14, 19, 20, 27])); // [ 8, 54, 62, 14, 20 ]
+
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+// All Odd Numbers
+function AllEvenNumbers(arr) {
+    let N = arr.length;
+    let oddNum = [];
+    for (let i = 0; i < N; i++) {
+        if (arr[i] % 2 != 0) {
+            oddNum.push(arr[i]);
+        }
+    }
+    // evenNum;
+    return oddNum;
+}
+console.log(AllEvenNumbers([8, 54, 79, 62, 33, 59, 14, 19, 20, 27])); // [ 8, 54, 62, 14, 20 ] // output is - [ 79, 33, 59, 19, 27 ]
+
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+// All Unique Elements - Increasing Order
+function findUniqueElementIncreasingOrder(A) {
+    let ans = [];
+    for (let i = 0; i < A.length; i++) {
+        let count = 0
+        for (let j = 0; j < A.length; j++) {
+            if (i === j) {
+                continue;
+            }
+            if (A[i] === A[j]) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            ans.push(A[i]);
+        }
+    }
+    for (let i = 0; i < ans.length; i++) {
+        let minvalue = ans[i]; // 9  //4
+        let index = i; //0
+        for (let j = i + 1; j < ans.length; j++) { //2
+            if (ans[j] < minvalue) { //5<9 => 4<5 => 7<4 => 8<4
+                minvalue = ans[j]; // 9=5 // 5=4 // 8=4 
+                index = j; //1 //2 //2 //2 //3
+            }
+        }
+        let temp = ans[i]; //9 //2 
+        ans[i] = ans[index]; //7 //3
+        ans[index] = temp; //7 -> 9
+    }
+    return ans;
+}
+
+console.log(findUniqueElementIncreasingOrder([8, 54, 79, 62, 33, 59, 14, 8, 20, 27, 33, 54])); // output is - 14 20 27 59 62 79
+
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------

@@ -743,4 +743,53 @@ console.log(divisible([23, 34, 25, 35, 66, 70, 14])) // output - [35,70]
 
 
 
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// List of Positive numbers
+
+function positiveNum(A) {
+    let N = A.length;
+    let result = [];
+    for (let i = 0; i < N; i++) {
+        if (A[i] > 0) {
+            result.push(A[i])
+        }
+    }
+    return result;
+}
+
+console.log(positiveNum([-99, 4, -2, -3, 6, 70, -8, 14])) //4 6 70 14
+
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
+
+
+// List With Prime Numbers
+
+function primeNum(A) {
+    let N = A.length;
+    let result = [];
+    for (let i = 0; i < N; i++) {
+        let count = 0;
+        for (let j = 1; j <= A[i]; j++) {
+            if (A[i] % j == 0) {
+                count++;
+            }
+        }
+        if (count == 2) {
+            result.push(A[i]);
+        }
+    }
+    return result;
+}
+console.log(primeNum([12, 23, 14, 19, 7, 2, 21, 20, 28, 11])) // [ 23, 19, 7, 2, 11 ]
+
+
+
+
 // ----------------------------------------------------------------------------------------------------------------------------

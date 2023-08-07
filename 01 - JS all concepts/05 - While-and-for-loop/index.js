@@ -181,6 +181,15 @@ console.log(result); //output: A=5, B=9 => 56789
 
 
 
+// Sum of Odds - Easy
+let A = prompt("enter the number ");
+let sum = 0;
+for (let i = 1; i <= A; i++) {
+    if (i % 2 !== 0) {
+        sum += i;
+    }
+}
+console.log(sum);
 
 
 

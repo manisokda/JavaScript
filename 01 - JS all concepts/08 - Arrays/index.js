@@ -702,3 +702,26 @@ console.log(findUniqueElementIncreasingOrder([8, 54, 79, 62, 33, 59, 14, 8, 20, 
 
 
 // ----------------------------------------------------------------------------------------------------------------------------
+
+
+
+// Check Pair With Sum X
+/*You are given an integer array A[] and an integer B.
+You are required to return 1 if any pair of elements exist in the array whose sum is equal to B.
+Otherwise, return 0.*/
+function checkPair(A, B) {
+    let N = A.length;
+    for (let i = 0; i < N; i++) {
+        for (let j = 0; j < i; j++) {
+            if (A[i] + A[j] == B) {
+                return 1
+            }
+        }
+    }
+    return 0
+}
+console.log(checkPair([41, 25, 36, 10, 9, 85, 45, 68, 74, 90], 100)) // output is 90+10 = 100 so ans is 1
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------
